@@ -1,3 +1,3 @@
 
-Y
-)sandbox/src/main/java/MyFirstProgram.java,7\9\79beb88463f5e4aeb95cb4f8140c6032783d37ed
+m
+=sandbox/src/main/java/pl/stqa/pft/sandbox/MyFirstProgram.java,d\6\d6269f10603817b5889fbc9fbe304367944cc3cd
