@@ -6,22 +6,22 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class ContactCreationTests {
-  private WebDriver driver;
+  private WebDriver wd;
 
   @BeforeMethod(alwaysRun = true)
   public void setUp() throws Exception {
-    driver = new FirefoxDriver();
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    driver.get("http://localhost/addressbook/");
+    wd = new FirefoxDriver();
+    wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    wd.get("http://localhost/addressbook/");
     login("admin", "secret");
   }
 
   private void login(String username, String password) {
-    driver.findElement(By.name("user")).clear();
-    driver.findElement(By.name("user")).sendKeys(username);
-    driver.findElement(By.name("pass")).clear();
-    driver.findElement(By.name("pass")).sendKeys(password);
-    driver.findElement(By.xpath("//input[@value='Login']")).click();
+    wd.findElement(By.name("user")).clear();
+    wd.findElement(By.name("user")).sendKeys(username);
+    wd.findElement(By.name("pass")).clear();
+    wd.findElement(By.name("pass")).sendKeys(password);
+    wd.findElement(By.xpath("//input[@value='Login']")).click();
   }
 
   @Test
@@ -29,44 +29,49 @@ public class ContactCreationTests {
     goToAddNewContactPage();
     fillContactForm(new ContactData("Harry", "Hole", "111222333", "test65748@test.com"));
     submitContactCreation();
+    returnToHomePage();
     logout();
   }
 
   private void logout() {
-    driver.findElement(By.linkText("Logout")).click();
+    wd.findElement(By.linkText("Logout")).click();
+  }
+
+  private void returnToHomePage() {
+    wd.findElement(By.linkText("home page")).click();
   }
 
   private void submitContactCreation() {
-    driver.findElement(By.xpath("(//input[@name='submit'])[2]")).click();
+    wd.findElement(By.xpath("(//input[@name='submit'])[2]")).click();
   }
 
   private void fillContactForm(ContactData contactData) {
-    driver.findElement(By.name("firstname")).click();
-    driver.findElement(By.name("firstname")).clear();
-    driver.findElement(By.name("firstname")).sendKeys(contactData.getFirstname());
-    driver.findElement(By.name("lastname")).click();
-    driver.findElement(By.name("lastname")).clear();
-    driver.findElement(By.name("lastname")).sendKeys(contactData.getLastname());
-    driver.findElement(By.name("mobile")).click();
-    driver.findElement(By.name("mobile")).clear();
-    driver.findElement(By.name("mobile")).sendKeys(contactData.getMobile());
-    driver.findElement(By.name("email")).click();
-    driver.findElement(By.name("email")).clear();
-    driver.findElement(By.name("email")).sendKeys(contactData.getEmail());
+    wd.findElement(By.name("firstname")).click();
+    wd.findElement(By.name("firstname")).clear();
+    wd.findElement(By.name("firstname")).sendKeys(contactData.getFirstname());
+    wd.findElement(By.name("lastname")).click();
+    wd.findElement(By.name("lastname")).clear();
+    wd.findElement(By.name("lastname")).sendKeys(contactData.getLastname());
+    wd.findElement(By.name("mobile")).click();
+    wd.findElement(By.name("mobile")).clear();
+    wd.findElement(By.name("mobile")).sendKeys(contactData.getMobile());
+    wd.findElement(By.name("email")).click();
+    wd.findElement(By.name("email")).clear();
+    wd.findElement(By.name("email")).sendKeys(contactData.getEmail());
   }
 
   private void goToAddNewContactPage() {
-    driver.findElement(By.linkText("add new")).click();
+    wd.findElement(By.linkText("add new")).click();
   }
 
   @AfterMethod(alwaysRun = true)
   public void tearDown() throws Exception {
-    driver.quit();
+    wd.quit();
   }
 
   private boolean isElementPresent(By by) {
     try {
-      driver.findElement(by);
+      wd.findElement(by);
       return true;
     } catch (NoSuchElementException e) {
       return false;
@@ -75,7 +80,7 @@ public class ContactCreationTests {
 
   private boolean isAlertPresent() {
     try {
-      driver.switchTo().alert();
+      wd.switchTo().alert();
       return true;
     } catch (NoAlertPresentException e) {
       return false;
