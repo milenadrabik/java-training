@@ -63,6 +63,14 @@ public class ApplicationManager {
         groupHelper.submitGroupCreation();
     }
 
+    public void initGroupModification() {
+        groupHelper.initGroupModification();
+    }
+
+    public void submitGroupModification() {
+        groupHelper.submitGroupModification();
+    }
+
     public NavigationHelper getNavigationHelper() {
         return navigationHelper;
     }
@@ -89,6 +97,14 @@ public class ApplicationManager {
 
     public void returnToHomePage() {
         contactHelper.returnToHomePage();
+    }
+
+    public void initContactModification() {
+        contactHelper.initContactModification();
+    }
+
+    public void submitContactModification() {
+        contactHelper.submitContactModification();
     }
 
     public void stop() {
