@@ -107,6 +107,18 @@ public class ApplicationManager {
         contactHelper.submitContactModification();
     }
 
+    public void selectContact() {
+        contactHelper.selectContact();
+    }
+
+    public void initContactDeletion() {
+        contactHelper.initContactDeletion();
+    }
+
+    public void confirmContactDeletion() {
+        contactHelper.confirmContactDeletion();
+    }
+
     public void stop() {
         wd.quit();
     }
