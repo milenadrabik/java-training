@@ -5,6 +5,10 @@ import pl.stqa.pft.addressbook.model.ContactData;
 
 public class ContactModificationTests extends TestBase {
 
+    public ContactModificationTests(String browser) {
+        super(browser);
+    }
+
     @Test
     public void testContractModification() {
         app.getContactHelper().initContactModification();

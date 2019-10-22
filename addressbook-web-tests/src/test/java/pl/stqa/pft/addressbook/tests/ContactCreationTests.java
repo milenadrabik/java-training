@@ -5,6 +5,10 @@ import pl.stqa.pft.addressbook.model.ContactData;
 
 public class ContactCreationTests extends TestBase{
 
+  public ContactCreationTests(String browser) {
+    super(browser);
+  }
+
   @Test
   public void testContactCreation() throws Exception {
     app.getNavigationHelper().goToAddNewContactPage();

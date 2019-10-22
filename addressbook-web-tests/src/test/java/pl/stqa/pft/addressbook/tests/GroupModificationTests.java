@@ -5,6 +5,10 @@ import pl.stqa.pft.addressbook.model.GroupData;
 
 public class GroupModificationTests extends TestBase{
 
+    public GroupModificationTests(String browser) {
+        super(browser);
+    }
+
     @Test
     public void testGroupModification() {
         app.getNavigationHelper().goToGroupPage();
