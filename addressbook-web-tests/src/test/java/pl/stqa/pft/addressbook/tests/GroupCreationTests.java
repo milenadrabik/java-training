@@ -3,17 +3,21 @@ package pl.stqa.pft.addressbook.tests;
 import org.testng.annotations.*;
 import pl.stqa.pft.addressbook.model.GroupData;
 
-public class GroupCreationTests extends TestBase{
+import static org.testng.Assert.assertEquals;
 
-  public GroupCreationTests(String browser) {
-    super(browser);
-  }
+public class GroupCreationTests extends TestBase {
 
-  @Test
-  public void testGroupCreation() throws Exception {
-    app.getNavigationHelper().goToGroupPage();
-    app.getGroupHelper().createGroup(new GroupData("test1", "test2", "test3"));
-    app.getSessionHelper().logout();
-  }
+    public GroupCreationTests(String browser) {
+        super(browser);
+    }
+
+    @Test
+    public void testGroupCreation() throws Exception {
+        app.getNavigationHelper().goToGroupPage();
+        int before = app.getGroupHelper().getGroupCount();
+        app.getGroupHelper().createGroup(new GroupData("test1", "test2", "test3"));
+        int after = app.getGroupHelper().getGroupCount();
+        assertEquals(after, before + 1);
+    }
 
 }
