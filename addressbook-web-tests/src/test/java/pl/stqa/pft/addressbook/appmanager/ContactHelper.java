@@ -2,8 +2,11 @@ package pl.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import pl.stqa.pft.addressbook.model.ContactData;
+
+import java.util.List;
 
 import static org.testng.AssertJUnit.assertFalse;
 
@@ -62,5 +65,10 @@ public class ContactHelper extends HelperBase {
 
     public boolean isThereAContact() {
         return isElementPresent(By.cssSelector("img[title='Edit']"));
+    }
+
+    public int getContactCount() {
+        List<WebElement> cells =  wd.findElements(By.xpath("//tbody//tr[@name='entry']"));
+        return cells.size();
     }
 }
