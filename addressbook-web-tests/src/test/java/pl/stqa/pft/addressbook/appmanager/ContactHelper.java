@@ -37,16 +37,16 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("home page"));
     }
 
-    public void initContactModification() {
-        click(By.cssSelector("img[title='Edit']"));
+    public void initContactModification(int index) {
+        wd.findElements(By.cssSelector("img[title='Edit']")).get(index).click();
     }
 
     public void submitContactModification() {
         click(By.name("update"));
     }
 
-    public void selectContact() {
-        click(By.name("selected[]"));
+    public void selectContact(int index) {
+        wd.findElements(By.name("selected[]")).get(index).click();
     }
 
     public void initContactDeletion() {
