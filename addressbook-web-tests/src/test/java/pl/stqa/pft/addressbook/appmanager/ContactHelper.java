@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import pl.stqa.pft.addressbook.model.ContactData;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.testng.AssertJUnit.assertFalse;
@@ -68,7 +69,18 @@ public class ContactHelper extends HelperBase {
     }
 
     public int getContactCount() {
-        List<WebElement> cells =  wd.findElements(By.xpath("//tbody//tr[@name='entry']"));
+        List<WebElement> cells = wd.findElements(By.xpath("//tbody//tr[@name='entry']"));
         return cells.size();
+    }
+
+    public List<ContactData> getContactList() {
+        List<ContactData> contacts = new ArrayList<ContactData>();
+        List<WebElement> elements = wd.findElements(By.xpath("//tbody//tr[@name='entry']"));
+        for (WebElement element : elements) {
+            String lastname = element.getText();
+            ContactData contact = new ContactData(lastname, null, null, null, null);
+            contacts.add(contact);
+        }
+        return contacts;
     }
 }
