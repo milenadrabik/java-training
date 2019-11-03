@@ -3,6 +3,7 @@ package pl.stqa.pft.addressbook.tests;
 import org.testng.annotations.Test;
 import pl.stqa.pft.addressbook.model.ContactData;
 
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 
@@ -23,14 +24,17 @@ public class ContactModificationTests extends TestBase {
         List<ContactData> before = app.getContactHelper().getContactList();
         app.getContactHelper().initContactModification(before.size() - 1);
         ContactData contact = new ContactData("Harry", "Hole", null, null, null);
-        app.getContactHelper().fillContactForm(contact,false);
+        app.getContactHelper().fillContactForm(contact, false);
         app.getContactHelper().submitContactModification();
         app.getContactHelper().returnToHomePage();
         List<ContactData> after = app.getContactHelper().getContactList();
         assertEquals(after.size(), before.size());
 
-        before.remove(before.size()-1);
+        before.remove(before.size() - 1);
         before.add(contact);
-        assertEquals(new HashSet<Object>(before), new HashSet<Object>(after));
+        Comparator<? super ContactData> byId = (g1, g2) -> Integer.compare(g1.getId(), g2.getId());
+        before.sort(byId);
+        after.sort(byId);
+        assertEquals(before, after);
     }
 }
