@@ -28,7 +28,7 @@ public class ContactHelper extends HelperBase {
         type(By.name("email"), contactData.getEmail());
 
         if (creation) {
-            new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+            new Select(wd.findElement(By.name("new_group"))).selectByValue("[none]");
         } else {
             assertFalse(isElementPresent(By.name("new_group")));
         }
@@ -78,7 +78,7 @@ public class ContactHelper extends HelperBase {
         List<WebElement> rows = wd.findElements(By.xpath("//tbody//tr[@name='entry']"));
         for (WebElement row : rows) {
             String firstname = row.findElements(By.tagName("td")).get(2).getText();
-            String lastname = row.findElements(By.tagName("td")).get(3).getText();
+            String lastname = row.findElements(By.tagName("td")).get(1).getText();
             ContactData contact = new ContactData(firstname, lastname, null, null, null);
             contacts.add(contact);
         }
