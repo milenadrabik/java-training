@@ -3,6 +3,7 @@ package pl.stqa.pft.addressbook.model;
 import java.util.Objects;
 
 public class ContactData {
+    private int id;
     private final String firstname;
     private final String lastname;
     private final String mobile;
@@ -15,6 +16,23 @@ public class ContactData {
         this.mobile = mobile;
         this.email = email;
         this.group = group;
+    }
+
+    public ContactData(int id, String firstname, String lastname, String mobile, String email, String group) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.mobile = mobile;
+        this.email = email;
+        this.group = group;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirstname() {
@@ -40,7 +58,8 @@ public class ContactData {
     @Override
     public String toString() {
         return "ContactData{" +
-                "firstname='" + firstname + '\'' +
+                "id=" + id +
+                ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", mobile='" + mobile + '\'' +
                 ", email='" + email + '\'' +
@@ -53,7 +72,8 @@ public class ContactData {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ContactData that = (ContactData) o;
-        return Objects.equals(firstname, that.firstname) &&
+        return id == that.id &&
+                Objects.equals(firstname, that.firstname) &&
                 Objects.equals(lastname, that.lastname) &&
                 Objects.equals(mobile, that.mobile) &&
                 Objects.equals(email, that.email) &&
@@ -62,6 +82,6 @@ public class ContactData {
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstname, lastname, mobile, email, group);
+        return Objects.hash(id, firstname, lastname, mobile, email, group);
     }
 }
