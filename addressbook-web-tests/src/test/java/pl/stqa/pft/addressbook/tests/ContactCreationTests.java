@@ -14,7 +14,7 @@ public class ContactCreationTests extends TestBase {
         super(browser);
     }
 
-    @Test(enabled = false)
+    @Test
     public void testContactCreation() throws Exception {
         List<ContactData> before = app.getContactHelper().getContactList();
         app.getNavigationHelper().goToAddNewContactPage();
