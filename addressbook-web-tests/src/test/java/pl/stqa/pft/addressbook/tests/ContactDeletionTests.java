@@ -2,7 +2,6 @@ package pl.stqa.pft.addressbook.tests;
 
 import org.testng.annotations.Test;
 import pl.stqa.pft.addressbook.model.ContactData;
-import pl.stqa.pft.addressbook.model.GroupData;
 
 import java.util.List;
 
@@ -14,7 +13,7 @@ public class ContactDeletionTests extends TestBase {
         super(browser);
     }
 
-    @Test
+    @Test(enabled = false)
     public void testContactDeletion() {
         if (!app.getContactHelper().isThereAContact()) {
             app.getNavigationHelper().goToAddNewContactPage();

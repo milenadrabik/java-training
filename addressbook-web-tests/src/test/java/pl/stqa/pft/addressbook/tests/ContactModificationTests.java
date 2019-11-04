@@ -4,7 +4,6 @@ import org.testng.annotations.Test;
 import pl.stqa.pft.addressbook.model.ContactData;
 
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.List;
 
 import static org.testng.Assert.assertEquals;
@@ -15,7 +14,7 @@ public class ContactModificationTests extends TestBase {
         super(browser);
     }
 
-    @Test
+    @Test(enabled = false)
     public void testContactModification() {
         if (!app.getContactHelper().isThereAContact()) {
             app.getNavigationHelper().goToAddNewContactPage();
