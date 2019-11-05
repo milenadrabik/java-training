@@ -82,14 +82,11 @@ public class ContactData {
         if (o == null || getClass() != o.getClass()) return false;
         ContactData that = (ContactData) o;
         return Objects.equals(firstname, that.firstname) &&
-                Objects.equals(lastname, that.lastname) &&
-                Objects.equals(mobile, that.mobile) &&
-                Objects.equals(email, that.email) &&
-                Objects.equals(group, that.group);
+                Objects.equals(lastname, that.lastname);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstname, lastname, mobile, email, group);
+        return Objects.hash(firstname, lastname);
     }
 }
