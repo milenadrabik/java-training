@@ -160,21 +160,11 @@ public class ContactData {
         ContactData that = (ContactData) o;
         return id == that.id &&
                 Objects.equals(firstName, that.firstName) &&
-                Objects.equals(lastName, that.lastName) &&
-                Objects.equals(address, that.address) &&
-                Objects.equals(homePhone, that.homePhone) &&
-                Objects.equals(mobilePhone, that.mobilePhone) &&
-                Objects.equals(workPhone, that.workPhone) &&
-                Objects.equals(allPhones, that.allPhones) &&
-                Objects.equals(email, that.email) &&
-                Objects.equals(email2, that.email2) &&
-                Objects.equals(email3, that.email3) &&
-                Objects.equals(allEmails, that.allEmails) &&
-                Objects.equals(group, that.group);
+                Objects.equals(lastName, that.lastName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, address, homePhone, mobilePhone, workPhone, allPhones, email, email2, email3, allEmails, group);
+        return Objects.hash(id, firstName, lastName);
     }
 }
