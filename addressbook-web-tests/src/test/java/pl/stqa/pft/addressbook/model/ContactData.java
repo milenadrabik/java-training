@@ -16,6 +16,7 @@ public class ContactData {
     private String email3;
     private String allEmails;
     private String group;
+    private String allData;
 
     public ContactData withId(int id) {
         this.id = id;
@@ -82,6 +83,11 @@ public class ContactData {
         return this;
     }
 
+    public ContactData withAllData(String allData){
+        this.allData = allData;
+        return this;
+    }
+
     public int getId() {
         return id;
     }
@@ -134,6 +140,10 @@ public class ContactData {
         return group;
     }
 
+    public String getAllData() {
+        return allData;
+    }
+
     @Override
     public String toString() {
         return "ContactData{" +
@@ -150,6 +160,7 @@ public class ContactData {
                 ", email3='" + email3 + '\'' +
                 ", allEmails='" + allEmails + '\'' +
                 ", group='" + group + '\'' +
+                ", allData='" + allData + '\'' +
                 '}';
     }
 
