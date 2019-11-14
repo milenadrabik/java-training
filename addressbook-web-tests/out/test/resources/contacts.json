@@ -1,0 +1,37 @@
+[
+  {
+    "firstName": "firstname 0",
+    "lastName": "lastname 0",
+    "address": "street 0\nKrakow",
+    "mobilePhone": "123-234-345",
+    "email": "email@aa.bb"
+  },
+  {
+    "firstName": "firstname 1",
+    "lastName": "lastname 1",
+    "address": "street 1\nKrakow",
+    "mobilePhone": "123-234-345",
+    "email": "email@aa.bb"
+  },
+  {
+    "firstName": "firstname 2",
+    "lastName": "lastname 2",
+    "address": "street 2\nKrakow",
+    "mobilePhone": "123-234-345",
+    "email": "email@aa.bb"
+  },
+  {
+    "firstName": "firstname 3",
+    "lastName": "lastname 3",
+    "address": "street 3\nKrakow",
+    "mobilePhone": "123-234-345",
+    "email": "email@aa.bb"
+  },
+  {
+    "firstName": "firstname 4",
+    "lastName": "lastname 4",
+    "address": "street 4\nKrakow",
+    "mobilePhone": "123-234-345",
+    "email": "email@aa.bb"
+  }
+]
