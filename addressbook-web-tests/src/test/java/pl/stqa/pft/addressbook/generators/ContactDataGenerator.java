@@ -84,12 +84,13 @@ public class ContactDataGenerator {
                     .withFirstName(String.format("firstname %s", i))
                     .withLastName(String.format("lastname %s", i))
                     .withAddress(String.format("street %s\nKrakow", i))
-                    .withHomePhone(String.format("123-234-345"))
-                    .withMobilePhone(String.format("333 444 555"))
-                    .withWorkPhone(String.format("+568 56 566 566"))
-                    .withEmail(String.format("email@aa.bb"))
-                    .withEmail2(String.format("email@bb.cc"))
-                    .withEmail3(String.format("email@cc.dd")));
+                    .withHomePhone(String.format("123-234-34%s", i))
+                    .withMobilePhone(String.format("333 444 55%s", i))
+                    .withWorkPhone(String.format("+568 56 566 56%s", i))
+                    .withEmail(String.format("email%s@aa.bb", i))
+                    .withEmail2(String.format("email%s@bb.cc", i))
+                    .withEmail3(String.format("email%s@cc.dd", i))
+                    .withPhoto(new File(String.format("src/test/resources/cat.jpg"))));
         }
         return contacts;
     }
