@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="pl.stqa.pft.sandbox.PrimeTests" tests="2" skipped="1" failures="0" errors="0" timestamp="2019-10-27T17:49:58" hostname="MIDR" time="29.511">
+  <properties/>
+  <testcase name="testNonPrime" classname="pl.stqa.pft.sandbox.PrimeTests" time="0.198"/>
+  <testcase name="testPrime" classname="pl.stqa.pft.sandbox.PrimeTests" time="29.306">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

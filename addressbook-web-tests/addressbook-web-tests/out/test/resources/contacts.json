@@ -1,0 +1,24 @@
+[
+  {
+    "firstName": "firstname 0",
+    "lastName": "lastname 0",
+    "address": "street 0\nKrakow",
+    "homePhone": "123-234-340",
+    "mobilePhone": "333 444 550",
+    "workPhone": "+568 56 566 560",
+    "email": "email0@aa.bb",
+    "email2": "email0@bb.cc",
+    "email3": "email0@cc.dd"
+  },
+  {
+    "firstName": "firstname 1",
+    "lastName": "lastname 1",
+    "address": "street 1\nKrakow",
+    "homePhone": "123-234-341",
+    "mobilePhone": "333 444 551",
+    "workPhone": "+568 56 566 561",
+    "email": "email1@aa.bb",
+    "email2": "email1@bb.cc",
+    "email3": "email1@cc.dd"
+  }
+]
