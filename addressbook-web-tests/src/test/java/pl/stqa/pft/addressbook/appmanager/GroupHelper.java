@@ -6,9 +6,7 @@ import org.openqa.selenium.WebElement;
 import pl.stqa.pft.addressbook.model.GroupData;
 import pl.stqa.pft.addressbook.model.Groups;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class GroupHelper extends HelperBase {
 
@@ -58,9 +56,12 @@ public class GroupHelper extends HelperBase {
         returnToGroupPage();
     }
 
-    public void modify(GroupData group) {
+    public void initModify(GroupData group) {
         selectGroupById(group.getId());
         initGroupModification();
+    }
+
+    public void modify(GroupData group) {
         fillGroupForm(group);
         submitGroupModification();
         groupCache = null;
