@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="pl.stqa.pft.addressbook.tests.ContactModificationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-19T16:31:47" hostname="MIDR" time="1.953">
+<testsuite name="pl.stqa.pft.addressbook.tests.ContactModificationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-19T17:13:30" hostname="MIDR" time="1.918">
   <properties/>
-  <testcase name="testContactModification[0](ContactData{id=2147483647, firstName='firstname 5', lastName='lastname 5', address='street 0&#10;Krakow', homePhone='123-234-340', mobilePhone='333 444 550', workPhone='+568 56 566 560', allPhones='null', email='email0@aa.bb', email2='email0@bb.cc', email3='email0@cc.dd', allEmails='null', group='null', photo=null, allData='null'})" classname="pl.stqa.pft.addressbook.tests.ContactModificationTests" time="1.953"/>
+  <testcase name="testContactModification[0](ContactData{id=2147483647, firstName='firstname 5', lastName='lastname 5', address='street 0&#10;Krakow', homePhone='123-234-340', mobilePhone='333 444 550', workPhone='+568 56 566 560', allPhones='null', email='email0@aa.bb', email2='email0@bb.cc', email3='email0@cc.dd', allEmails='null', group='null', photo=null, allData='null'})" classname="pl.stqa.pft.addressbook.tests.ContactModificationTests" time="1.918"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
