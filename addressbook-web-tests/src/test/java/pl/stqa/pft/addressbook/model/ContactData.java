@@ -5,18 +5,24 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import java.io.File;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
-@Table(name="addressbook")
+@Table(name = "addressbook")
 public class ContactData {
 
     @Id
-    @Column(name="id")
+    @Column(name = "id")
     private int id;
 
     @Expose
@@ -64,15 +70,17 @@ public class ContactData {
     @Transient
     private String allEmails;
 
-    @Transient
-    private String group;
-
     @Column(name = "photo")
     @Type(type = "text")
     private String photo;
 
     @Transient
     private String allData;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "address_in_groups",
+            joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "group_id"))
+    private Set<GroupData> groups = new HashSet<GroupData>();
 
 
     public ContactData withPhoto(File photo) {
@@ -140,12 +148,7 @@ public class ContactData {
         return this;
     }
 
-    public ContactData withGroup(String group) {
-        this.group = group;
-        return this;
-    }
-
-    public ContactData withAllData(String allData){
+    public ContactData withAllData(String allData) {
         this.allData = allData;
         return this;
     }
@@ -198,12 +201,8 @@ public class ContactData {
         return allEmails;
     }
 
-    public String getGroup() {
-        return group;
-    }
-
     public File getPhoto() {
-        if(photo != null) {
+        if (photo != null) {
             return new File(photo);
         }
         return null;
@@ -211,6 +210,10 @@ public class ContactData {
 
     public String getAllData() {
         return allData;
+    }
+
+    public Groups getGroups() {
+        return new Groups(groups);
     }
 
     @Override
