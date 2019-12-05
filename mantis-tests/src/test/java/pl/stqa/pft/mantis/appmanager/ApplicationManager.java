@@ -22,6 +22,10 @@ public class ApplicationManager {
     private RegistrationHelper registrationHelper;
     private FtpHelper ftp;
     private MailHelper mailHelper;
+    private LoginHelper loginHelper;
+    private NavigationHelper navigationHelper;
+    private ManageUsersHelper manageUsersHelper;
+    private DbHelper dbHelper;
 
     public ApplicationManager(String browser) {
         this.browser = browser;
@@ -71,6 +75,8 @@ public class ApplicationManager {
                 wd = new InternetExplorerDriver();
             }
 
+            dbHelper = new DbHelper();
+
             wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
             wd.get(properties.getProperty("web.baseUrl"));
         }
@@ -82,5 +88,30 @@ public class ApplicationManager {
             mailHelper = new MailHelper(this);
         }
         return mailHelper;
+    }
+
+    public LoginHelper login() {
+        if (loginHelper == null) {
+            loginHelper = new LoginHelper(this);
+        }
+        return loginHelper;
+    }
+
+    public NavigationHelper goTo() {
+        if (navigationHelper == null) {
+            navigationHelper = new NavigationHelper(this);
+        }
+        return navigationHelper;
+    }
+
+    public ManageUsersHelper manageUsers() {
+        if (manageUsersHelper == null) {
+            manageUsersHelper = new ManageUsersHelper(this);
+        }
+        return manageUsersHelper;
+    }
+
+    public DbHelper db() {
+        return dbHelper;
     }
 }
