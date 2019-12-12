@@ -36,7 +36,7 @@ public class TestBase extends ApplicationManager {
         app.stop();
     }
 
-    public void skipIfNotFixed ( int issueId) throws RemoteException, ServiceException, MalformedURLException {
+    public void skipIfNotFixed(int issueId) throws RemoteException, ServiceException, MalformedURLException {
         if (isIssueOpen(issueId)) {
             throw new SkipException("Ignored because of issue " + issueId);
         }
